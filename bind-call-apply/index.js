@@ -48,6 +48,41 @@
     print.apply(personJohnDoe);
     print.apply(personJohnDoe, [true]);
     greet.apply(this, ['es', 'Sumeet', 'Sarkar']);
+
+    const arr1 = [1, 2, 3, 4];
+    const arr2 = [5, 6, 7, 8];
+    arr1.push.apply(arr1, arr2)
+    console.log(arr1);
+
+    console.log('name: ', getConfig('name'));
+    console.log('server timeout: ', getConfig('server', 'timeout'));
+  }
+
+  function getConfig() {
+    return getConfigWithCountryCode.apply(this, [countryCode, ...Array.from(arguments)]);
+  }
+
+  const countryCode = 'uk';
+  const config = {
+    'us': {
+      name: 'United States Of America',
+      server: {
+        timeout: '300'
+      },
+    },
+    'uk': {
+      name: 'United Kingdom',
+      server: {
+        timeout: '500'
+      }
+    },
+  }
+
+  function getConfigWithCountryCode(countryCode = 'us', key1, key2) {
+    const countryConfig = config[countryCode];
+    if (key1 && key2)
+      return countryConfig[key1] && countryConfig[key1][key2];
+    return countryConfig[key1];
   }
 
   function demo() {
@@ -55,7 +90,6 @@
     bindDemo();
     callDemo();
     applyDemo();
-    // real world apply/ call demo
   };
 
   (context || this).demoLibs['bind-call-apply'] = demo;

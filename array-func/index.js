@@ -104,7 +104,39 @@
     console.log(sandwich);
 
     reduceExampleExtra();
+
+    demoSome();
+    demoEvery();
+    demoFrom('a', 'b', 1, 2, { a: 'a' });
+    demoOf();
   };
+
+  function demoSome() {
+    const numbers = [1, 2, 3, 4, 5, 6, 7];
+    console.log(numbers.some(x => x % 2 === 0));
+  }
+
+  function demoEvery() {
+    const numbers = [1, 2, 3, 4, 5, 6, 7];
+    console.log(numbers.every(x => x % 2 === 0));
+  }
+
+  function demoFrom() {
+    console.log(Array.from([1, 2, 3, 4]));
+    // Uncaught TypeError: arguments.forEach is not a function
+    // because arguments is not any array
+    // arguments.forEach(x => console.log(x));
+    // instead use Array.from
+    const arrArgs = Array.from(arguments);
+    arrArgs.forEach(x => console.log(x));
+
+    // use case of Array from using optional map function argument
+    console.log(Array.from([1, 2, 3, 4], x => x * 2));
+  }
+
+  function demoOf() {
+    console.log(Array.of(1, 2, 3, 4, 5, 6));
+  }
 
   function reduceExampleExtra() {
     const input = [

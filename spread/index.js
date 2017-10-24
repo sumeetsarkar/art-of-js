@@ -1,8 +1,6 @@
 (function(context) {
 
-  function demo() {
-    console.log('\n\nSPREAD');
-
+  function basicSpread() {
     const name = {
       name: {
         title: 'Dr.',
@@ -41,6 +39,39 @@
     const arrMerged = [...arr1, ...arr2];
 
     console.log(arrMerged);
+  }
+
+  function functionSpread() {
+    // regular stuff
+    print('John', 'Doe');
+
+    // function spread
+    const arrName = ['John', 'Doe'];
+    print(...arrName);
+
+    const a = 'John';
+    const b = 'Doe';
+    // now this is interesting, guess the output
+    print(...[...a,...b]);
+  }
+
+  function print(firstName, lastName) {
+    console.log(`Hey ${firstName} ${lastName}`);
+  }
+
+  function destructSpread() {
+    const colors = ['red', 'green', 'blue', 'yellow', 'brown'];
+    const [ first, second, ...restOfColors ] = colors;
+    console.log(first);
+    console.log(second);
+    console.log(restOfColors);
+  }
+
+  function demo() {
+    console.log('\n\nSPREAD');
+    basicSpread();
+    functionSpread();
+    destructSpread();
   };
 
   (context || this).demoLibs['spread'] = demo;
