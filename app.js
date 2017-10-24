@@ -22,6 +22,10 @@ document.body.appendChild(ulList);
         name: 'Bind Call Apply',
         src: './bind-call-apply/index.js',
     },{
+        key: 'bind',
+        name: 'Bind In Class',
+        src: './bind-in-es5class/index.js',
+    },{
         key: 'let-const-var',
         name: 'Let Const Var',
         src: './let-const-var/index.js',
