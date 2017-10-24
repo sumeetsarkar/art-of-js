@@ -36,6 +36,7 @@
 
     const arr1 = [1, 2, 3, 4];
     const arr2 = [10, 20, 30, 40];
+    // spread
     const arrMerged = [...arr1, ...arr2];
 
     console.log(arrMerged);
@@ -59,8 +60,9 @@
     console.log(`Hey ${firstName} ${lastName}`);
   }
 
-  function destructSpread() {
+  function rest() {
     const colors = ['red', 'green', 'blue', 'yellow', 'brown'];
+    // rest
     const [ first, second, ...restOfColors ] = colors;
     console.log(first);
     console.log(second);
@@ -71,7 +73,7 @@
     console.log('\n\nSPREAD');
     basicSpread();
     functionSpread();
-    destructSpread();
+    rest();
   };
 
   (context || this).demoLibs['spread'] = demo;

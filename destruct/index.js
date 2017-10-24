@@ -14,6 +14,10 @@
     console.log(`${title} ${firstName} ${lastName}`);
   }
 
+  function printNameDestructParams({ title, firstName, lastName }) {
+    console.log(`${title} ${firstName} ${lastName}`);
+  }
+
   function demo() {
     console.log('\n\nDESTRUCTURING');
 
@@ -36,6 +40,7 @@
 
     console.log(id);
     printName(name);
+    printNameDestructParams(name);
     printAddress(addr);
   };
 
