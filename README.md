@@ -15,4 +15,4 @@
 10. [Object literals](object-literals/index.js)
 11. [Promises](promises/index.js)
 12. [Spread](spread/index.js)
-13. [Template literals](template-literals/index.js)
+13. [Template / Tagged Template literals](template-literals/index.js)

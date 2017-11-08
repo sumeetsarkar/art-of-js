@@ -2,9 +2,7 @@
 
   function capitalize(tokens = [], ...values) {
     return tokens.reduce((acc, x, i) => {
-      if (values.length > i)
-        return acc + x + `${values[i]}`.toUpperCase();
-      return acc;
+      return acc + x + `${values[i] || ''}`.toUpperCase();
     }, '');
   }
 
