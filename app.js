@@ -67,6 +67,10 @@ document.body.appendChild(ulList);
     key: 'closures',
     name: 'Closures',
     src: './closures/index.js',
+  },{
+    key: 'proxies',
+    name: 'Proxies',
+    src: './proxies/index.js',
   },
 ].sort((a, b) => {
   const nameA = a.name.toLowerCase();
