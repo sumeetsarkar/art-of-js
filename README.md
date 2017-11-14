@@ -14,5 +14,6 @@
 9. [Let Const Var](let-const-var/index.js)
 10. [Object literals](object-literals/index.js)
 11. [Promises](promises/index.js)
-12. [Spread](spread/index.js)
-13. [Template / Tagged Template literals](template-literals/index.js)
+12. [Proxies](proxies/index.js)
+13. [Spread](spread/index.js)
+14. [Template / Tagged Template literals](template-literals/index.js)
