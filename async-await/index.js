@@ -1,11 +1,19 @@
 (function(context) {
 
-    async function asyncDemo() {
-      console.log('Fetch initiating');
-      await fetch('https://api.github.com/search/repositories?sort=stars&order=desc&q=art%20o%20fjs')
+    async function asyncFetchDemo() {
+      console.log('Fetch async initiating');
+      const responsePromise = await fetch('https://api.github.com/search/repositories?sort=stars&order=desc&q=art%20o%20fjs')
+      const responseJSON = await responsePromise.json();
+      console.log(responseJSON);
+      console.log('Fetch async responsed successfully');
+    }
+
+    function regularFetchDemo() {
+      console.log('Fetch regular initiating');
+      fetch('https://api.github.com/search/repositories?sort=stars&order=desc&q=art%20o%20fjs')
         .then(x => x.json())
         .then(x => console.log(x));
-      console.log('Fetch responsed successfully');
+      console.log('Fetch regular responsed successfully');
     }
 
     function getPromise(value) {
@@ -27,11 +35,11 @@
 
     function demo() {
       console.log('\n\nASYNC AWAIT DEMO');
-      asyncDemo();
-      console.log('After asyncDemo is called first time');
-      asyncDemo();
-      console.log('After asyncDemo is called second time');
-      asyncPromise();
+      asyncFetchDemo();
+      console.log('After asyncFetchDemo is called');
+      regularFetchDemo();
+      console.log('After regularFetchDemo is called');
+      // asyncPromise();
     };
   
     (context || this).demoLibs['async-await'] = demo;
