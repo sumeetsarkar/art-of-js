@@ -71,6 +71,10 @@ document.body.appendChild(ulList);
     key: 'proxies',
     name: 'Proxies',
     src: './proxies/index.js',
+  },{
+    key: 'async-await',
+    name: 'Async Await',
+    src: './async-await/index.js',
   },
 ].sort((a, b) => {
   const nameA = a.name.toLowerCase();
