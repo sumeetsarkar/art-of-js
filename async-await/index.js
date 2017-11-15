@@ -39,7 +39,7 @@
       console.log('After asyncFetchDemo is called');
       regularFetchDemo();
       console.log('After regularFetchDemo is called');
-      // asyncPromise();
+      asyncPromise();
     };
   
     (context || this).demoLibs['async-await'] = demo;
