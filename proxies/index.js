@@ -49,11 +49,21 @@
     console.log(myProxyObj.name);
     console.log(myProxyObj.language);
   }
+  
+  function demoRevocableProxy() {
+    const { proxy, revoke } = Proxy.revocable({}, {}); // passing empty object as target and handler
+    proxy.name = 'Sumeet Sarkar';
+    console.log(proxy.name);
+    revoke();
+    console.log(proxy); // works, as Proxy still shows the entire object
+    console.log(proxy.name); // error! TypeError: Cannot perform 'get' on a proxy that has been revoked
+  }
 
   function demo() {
     console.log('\n\PROXIES');
     demoSimpleProxy();
     demoProxyCreator();
+    demoRevocableProxy();
   };
 
   (context || this).demoLibs['proxies'] = demo;
