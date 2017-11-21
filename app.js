@@ -75,6 +75,10 @@ document.body.appendChild(ulList);
     key: 'async-await',
     name: 'Async Await',
     src: './async-await/index.js',
+  },{
+    key: 'generators',
+    name: 'Generators',
+    src: './generators/index.js',
   },
 ].sort((a, b) => {
   const nameA = a.name.toLowerCase();
