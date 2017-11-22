@@ -42,6 +42,19 @@
     printName(name);
     printNameDestructParams(name);
     printAddress(addr);
+
+    // array destructuring
+    const arr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const [mon, tue, wed, ...restOfWeek] = arr;
+    console.log(mon);
+    console.log(tue);
+    console.log(wed);
+    console.log(restOfWeek);
+
+    const [first, second, ...restOfNumbers] = [1, 2, 3, 4, 5];
+    console.log(first);
+    console.log(second);
+    console.log(restOfNumbers);
   };
 
   (context || this).demoLibs['destruct'] = demo;
