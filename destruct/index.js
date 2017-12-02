@@ -14,6 +14,7 @@
     console.log(`${title} ${firstName} ${lastName}`);
   }
 
+  // destruct received object param
   function printNameDestructParams({ title, firstName, lastName }) {
     console.log(`${title} ${firstName} ${lastName}`);
   }
@@ -45,12 +46,16 @@
 
     // array destructuring
     const arr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    // destructs arr[0], arr[1], arr[2] and rest of items into
+    // mon tue wed and restOfNumbers respectively
     const [mon, tue, wed, ...restOfWeek] = arr;
     console.log(mon);
     console.log(tue);
     console.log(wed);
     console.log(restOfWeek);
 
+    // destructs [0], [1] and rest of items into
+    // first second and restOfNumbers respectively
     const [first, second, ...restOfNumbers] = [1, 2, 3, 4, 5];
     console.log(first);
     console.log(second);
