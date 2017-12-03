@@ -16,6 +16,7 @@
     }
   }
 
+  // function accepts param language with default value 'en'
   function greetWithDefaultParams(name, language = 'en') {
     switch(language) {
       case 'en': console.log(`Hello ${name}`); break;

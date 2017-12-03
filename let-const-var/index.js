@@ -38,6 +38,12 @@
     let demoLet = 'global let';
     const demoConst = 'I am constant';
 
+    // let maintains block scope
+    // var maintains function scope
+    
+    // It is a good practice to always declare variables as const
+    // unless you need to re-assign it with new value later, in such cases use let
+
     console.log(demoVar);
     console.log(demoLet);
     console.log(demoConst);
